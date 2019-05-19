@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
     'users',
+    'locations',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'

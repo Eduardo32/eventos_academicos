@@ -2,7 +2,9 @@ from turtledemo import yinyang
 
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
-from datetime import datetime, timedelta
+from datetime import datetime
+
+from locations.models import Estado, Cidade
 
 
 class CustomUserManager(UserManager):
@@ -10,6 +12,18 @@ class CustomUserManager(UserManager):
 
 
 class CustomUser(AbstractUser):
+    estado = models.ForeignKey(
+        Estado,
+        on_delete=models.CASCADE,
+        null=True,
+    )
+
+    cidade = models.ForeignKey(
+        Cidade,
+        on_delete=models.SET_NULL,
+        null=True,
+    )
+
     university = models.CharField(
         max_length=30
     )
