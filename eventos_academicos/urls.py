@@ -21,6 +21,5 @@ from eventos_academicos.views import IndexTemplateView
 urlpatterns = [
     path('', IndexTemplateView.as_view(), name='index'),
     path('admin/', admin.site.urls),
-    # path('users/', include('users.urls', namespace='users')),
     path('accounts/', include('allauth.urls')),
 ]
