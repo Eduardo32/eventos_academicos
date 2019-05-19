@@ -10,7 +10,9 @@ class CustomUserCreationForm(UserCreationForm):
             'email',
             'first_name',
             'last_name',
+            'birth',
             'username',
+            'university',
         ]
 
 
